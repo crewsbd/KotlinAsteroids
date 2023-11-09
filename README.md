@@ -4,7 +4,7 @@ Kotlin Asteroids is a game were you see how many asteroids you can shoot before 
 
 I wrote this game as a way to familiarize myself with the Kotlin programming language. I made use of a Java tutorial for making a simple game and adapted it to Kotlin.
 
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/d9uKWShDOJo)
 
 # Development Environment
 

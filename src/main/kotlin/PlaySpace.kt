@@ -14,6 +14,8 @@ class PlaySpace() : JPanel(), ActionListener{
     val FRAME_DELAY: Int = 1000/FRAME_RATE
     val STARTING_ASTEROID_DELAY = 90f
     val GAME_OVER_PAUSE: Int = 180 //Time to pause after game over
+    val BIG_FONT =  Font("San-Serif", Font.BOLD, 40)
+    val SMALL_FONT =  Font("San-Serif", Font.BOLD, 16)
 
     val gameHeight: Int = 480
     val gameWidth: Int = 640
@@ -213,11 +215,13 @@ class PlaySpace() : JPanel(), ActionListener{
             val fontX = gameWidth/2 - fontMetrics.stringWidth("GAME OVER")/2
             // If enough time elapsed, draw reset message
             if(stateCountdown <= 0) {
-                graphics2d.drawString("Press Fire", 300, gameHeight/2 + 100)
+                drawStringCentered("Press Fire", gameWidth/2, gameHeight/2+100, SMALL_FONT, graphics2d)
+                //graphics2d.drawString("Press Fire", 300, gameHeight/2 + 100)
             }
 
             graphics2d.font = font
-            graphics2d.drawString("GAME OVER", fontX, gameHeight/2)
+            //graphics2d.drawString("GAME OVER", fontX, gameHeight/2)
+            drawStringCentered("GAME OVER", gameWidth/2, gameHeight/2, BIG_FONT, graphics2d)
 
 
         }
@@ -226,13 +230,20 @@ class PlaySpace() : JPanel(), ActionListener{
 
         }
         //Debug message
-        graphics2d.drawString("SCORE: ${score} $newAsteroidDelay", 10, 20)
+        graphics2d.font = SMALL_FONT
+        graphics2d.drawString("SCORE: ${score}", 10, 20)
     }
     fun resetGame() {
         score = 0
         newAsteroidDelay = STARTING_ASTEROID_DELAY
         player = Player(this, Coordinate(gameWidth.toFloat()/2, gameHeight.toFloat()/2))
         entities.add(player)
+    }
+    fun drawStringCentered(string:String, x:Int, y:Int, font:Font, graphics2d: Graphics2D) {
+        val fontMetrics = graphics2d.getFontMetrics(font)
+        val fontX = -fontMetrics.stringWidth(string)/2 + x
+        graphics2d.font = font
+        graphics2d.drawString(string, fontX, y)
     }
 
 }
