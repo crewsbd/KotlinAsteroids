@@ -12,7 +12,7 @@ Kotlin Asteroids was written in Kotlin using the IntelliJ IDEA IDE. It makes use
 
 Kotlin is a relatively new object-oriented programming language. It is built on Java and is compatible with common Java libraries. Kotlin has gained in popularity since it was adopted for use in the Android operating system.
 
-# Useful Websites
+# Useful Websites 
 
 - [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
 - [W3 Schools Kotlin Tutorial](https://www.w3schools.com/kotlin/index.php)
