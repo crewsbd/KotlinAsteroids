@@ -10,18 +10,12 @@ class InputManager: KeyListener, MouseListener {
     var rightKey: Boolean = false
     var boostKey: Boolean = false
     var fireKey: Boolean = false
-
     var mousePosition: Coordinate = Coordinate(0f,0f)
 
-
     override fun keyTyped(e: KeyEvent?) {
-
-
     }
     override fun mouseClicked(e: MouseEvent?) {
-
     }
-
     override fun mousePressed(e: MouseEvent?) {
         if (e != null) {
             println(" $e.button")
@@ -41,13 +35,9 @@ class InputManager: KeyListener, MouseListener {
     }
 
     override fun mouseEntered(e: MouseEvent?) {
-
     }
-
     override fun mouseExited(e: MouseEvent?) {
-
     }
-
     override fun keyPressed(e: KeyEvent?) {
         if (e != null) {
 
@@ -61,7 +51,6 @@ class InputManager: KeyListener, MouseListener {
             }
         }
     }
-
     override fun keyReleased(e: KeyEvent?) {
         if (e != null) {
 
